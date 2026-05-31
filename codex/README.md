@@ -11,12 +11,22 @@ Agent Skills for the OpenAI **Codex** CLI. Same `SKILL.md` format as Claude skil
   Tufte's ten principles are preserved verbatim from the Claude version; only the
   triggering and output guidance are adapted for Codex's terminal-first workflow.
 
+  ```
+  tufte/
+  ├── SKILL.md                 # triggers, process, output, checklist (lean)
+  ├── references/principles.md # Tufte's ten rules (verbatim) + kill list
+  └── agents/openai.yaml       # Codex metadata; allow_implicit_invocation: true
+  ```
+
 ## Install (wire into Codex)
 
+Copy the whole skill directory (it's multi-file now):
+
 ```bash
-mkdir -p ~/.codex/skills/tufte
-cp codex/skills/tufte/SKILL.md ~/.codex/skills/tufte/SKILL.md
+mkdir -p ~/.codex/skills
+cp -r codex/skills/tufte ~/.codex/skills/
 ```
 
-Then in a Codex session it triggers automatically, or invoke explicitly via the slash menu.
-No `config.toml` change is required — skills under `~/.codex/skills/` are auto-discovered.
+Then in a Codex session it triggers automatically (implicit invocation is enabled),
+or invoke it explicitly with `$tufte`. No `config.toml` change is required — skills
+under `~/.codex/skills/` are auto-discovered.
