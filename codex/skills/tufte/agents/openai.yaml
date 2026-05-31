@@ -1,0 +1,8 @@
+interface:
+  display_name: "Tufte"
+  short_description: "Tufte-clean data viz, used proactively to reason through complex decisions."
+  brand_color: "#1A1A1A"
+
+policy:
+  # Allow Codex to trigger this skill implicitly (decision-support mode), not only on $tufte.
+  allow_implicit_invocation: true
